@@ -1,0 +1,34 @@
+[
+	{
+		"id": "player1",
+		"name": "John Doe",
+		"firstName": "John",
+		"armedWeapon": "fist",
+		"active": true,
+		"inventory": [],
+		"equipment": {
+			"Helmet": "None",
+			"Body Armour": "None",
+			"Gloves": "None",
+			"Boots": "None",
+			"Weapon": "None"
+		},
+		"vertexId": "class-102",
+		"stats": {
+			"Lvl": 1,
+			"Exp": 0,
+			"Atk": 10,
+			"Def": 0,
+			"Current HP": 500,
+			"Max HP": 500,
+			"Current Mana": 0,
+			"Max Mana": 0
+		},
+		"isPlayer": true,
+		"interactionPriority": 9001,
+		"magic": [],
+		"escapeDifficulty": 60,
+		"adventureLog": [],
+		"hasEscapedFromHellspawn": false
+	}
+]

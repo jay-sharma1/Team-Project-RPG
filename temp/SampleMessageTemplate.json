@@ -1,0 +1,36 @@
+[
+    {
+        "userActions": [
+            "1"
+        ],
+        "postconditions": {
+            "1": {
+                "prints": [
+                    {
+                        "message": "{}: ",
+                        "messageArgs": [
+                            {
+                                "target": "caller",
+                                "targetState": "name"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "userActions": [
+            "1"
+        ],
+        "postconditions": {
+            "1": {
+                "prints": [
+                    {
+                        "message": ""
+                    }
+                ]
+            }
+        }
+    }
+]

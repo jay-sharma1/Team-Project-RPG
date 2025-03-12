@@ -1,0 +1,80 @@
+[
+    {
+        "id": "health-potion-1",
+        "name": "Health Potion",
+        "active": true,
+        "vertexId": "main-entrance/exit",
+        "isItem": true,
+        "type": "Healing",
+        "usage": "Consumable",
+        "buffStrength": 30,
+        "interactionPriority": 10,
+        "reactions": [
+            {
+                "preconditions": [
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "acquired health-potion-1"
+                    }
+                ],
+                "postconditions": {
+                    "0": [
+                        {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired health-potion-1"
+                        },
+                        {
+                            "operation": "pickup",
+                            "target": "caller",
+                            "targetState": "inventory",
+                            "value": "id=health-potion-1"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "mana-potion-1",
+        "name": "Mana Potion",
+        "active": true,
+        "vertexId": "main-entrance/exit",
+        "isItem": true,
+        "type": "Mana Restoring",
+        "usage": "Consumable",
+        "buffStrength": 30,
+        "interactionPriority": 10,
+        "reactions": [
+            {
+                "preconditions": [
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "acquired mana-potion-1"
+                    }
+                ],
+                "postconditions": {
+                    "0": [
+                        {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired mana-potion-1"
+                        },
+                        {
+                            "operation": "pickup",
+                            "target": "caller",
+                            "targetState": "inventory",
+                            "value": "id=mana-potion-1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

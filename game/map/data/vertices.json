@@ -1,0 +1,779 @@
+[
+    {
+        "id": "2f-north-hallway-w2",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-north-hallway-e"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-north-hallway-w1"
+            },
+            {
+                "direction": "s",
+                "destination": "2f-west-hallway"
+            }
+        ],
+        "name": "2F North Hallway W2",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-north-hallway-w1",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-north-hallway-w2"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-north-hallway-e1"
+            },
+            {
+                "direction": "s",
+                "destination": "clubroom-2"
+            }
+        ],
+        "name": "2F North Hallway W1",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-north-hallway-e1",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-north-hallway-w1"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-north-hallway-e2"
+            },
+            {
+                "direction": "s",
+                "destination": "clubroom-1"
+            }
+        ],
+        "name": "2F North Hallway E1",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-north-hallway-e2",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-north-hallway-e1"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-north-hallway-w"
+            },
+            {
+                "direction": "s",
+                "destination": "2f-east-hallway"
+            }
+        ],
+        "name": "2F North Hallway E2",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-205",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "2f-west-hallway"
+            }
+        ],
+        "name": "Class 205",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-west-hallway",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "class-205"
+            },
+            {
+                "direction": "n",
+                "destination": "2f-north-hallway-w2"
+            },
+            {
+                "direction": "s",
+                "destination": "2f-south-hallway-w2"
+            }
+        ],
+        "name": "2F West Hallway",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "clubroom-2",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-north-hallway-w1"
+            }
+        ],
+        "name": "Clubroom 2",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "clubroom-1",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-north-hallway-e1"
+            }
+        ],
+        "name": "Clubroom 1",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-east-hallway",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-north-hallway-e2"
+            },
+            {
+                "direction": "e",
+                "destination": "class-201"
+            },
+            {
+                "direction": "s",
+                "destination": "2f-south-hallway-e2"
+            }
+        ],
+        "name": "2F East Hallway",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-201",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-east-hallway"
+            }
+        ],
+        "name": "Class 201",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "janitor-closet",
+        "edges": [
+            {
+                "direction": "s",
+                "destination": "2f-south-hallway-w1"
+            }
+        ],
+        "name": "Janitor Closet",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "school-shop",
+        "edges": [
+            {
+                "direction": "s",
+                "destination": "2f-south-hallway-e1"
+            }
+        ],
+        "name": "School Shop",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-south-hallway-w2",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-south-hallway-e"
+            },
+            {
+                "direction": "n",
+                "destination": "2f-west-hallway"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-south-hallway-w1"
+            },
+            {
+                "direction": "s",
+                "destination": "class-204"
+            }
+        ],
+        "name": "2F South Hallway W2",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-south-hallway-w1",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-south-hallway-w2"
+            },
+            {
+                "direction": "n",
+                "destination": "janitor-closet"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-south-hallway-e1"
+            },
+            {
+                "direction": "s",
+                "destination": "class-203"
+            }
+        ],
+        "name": "2F South Hallway W1",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-south-hallway-e1",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-south-hallway-w1"
+            },
+            {
+                "direction": "n",
+                "destination": "school-shop"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-south-hallway-e2"
+            },
+            {
+                "direction": "s",
+                "destination": "class-202"
+            }
+        ],
+        "name": "2F South Hallway E1",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "2f-south-hallway-e2",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-south-hallway-e1"
+            },
+            {
+                "direction": "n",
+                "destination": "2f-east-hallway"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-south-hallway-w"
+            },
+            {
+                "direction": "s",
+                "destination": "music-room"
+            }
+        ],
+        "name": "2F South Hallway E2",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-204",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-south-hallway-w2"
+            }
+        ],
+        "name": "Class 204",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-203",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-south-hallway-w1"
+            }
+        ],
+        "name": "Class 203",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-202",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-south-hallway-e1"
+            }
+        ],
+        "name": "Class 202",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "music-room",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "2f-south-hallway-e2"
+            }
+        ],
+        "name": "Music Room",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "gymnasium",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "school-yard"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-north-hallway"
+            }
+        ],
+        "name": "Gymnasium",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-north-hallway-w",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-north-hallway-e2"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-north-hallway"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-west-hallway-n"
+            }
+        ],
+        "name": "1F North Hallway W",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-north-hallway",
+        "edges": [
+            {
+                "direction": "s",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "w",
+                "destination": "1f-north-hallway-w"
+            },
+            {
+                "direction": "n",
+                "destination": "gymnasium"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-north-hallway-e"
+            }
+        ],
+        "name": "1F North Hallway",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-north-hallway-e",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-north-hallway"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-north-hallway-w2"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-east-hallway-n"
+            }
+        ],
+        "name": "1F North Hallway E",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "infirmary",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "secret-basement"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-west-hallway-n"
+            }
+        ],
+        "name": "Infirmary",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-west-hallway-n",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "w",
+                "destination": "infirmary"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-north-hallway-w"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-west-hallway-s"
+            }
+        ],
+        "name": "1F West Hallway N",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "auditorium",
+        "edges": [
+            {
+                "direction": "nw",
+                "destination": "1f-west-hallway-n"
+            },
+            {
+                "direction": "sw",
+                "destination": "1f-west-hallway-s"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-north-hallway"
+            },
+            {
+                "direction": "ne",
+                "destination": "1f-east-hallway-n"
+            },
+            {
+                "direction": "se",
+                "destination": "1f-east-hallway-s"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-south-hallway"
+            }
+        ],
+        "name": "Auditorium",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-east-hallway-n",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-north-hallway-e"
+            },
+            {
+                "direction": "e",
+                "destination": "class-101"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-east-hallway-s"
+            }
+        ],
+        "name": "1F East Hallway N",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-101",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-east-hallway-n"
+            }
+        ],
+        "name": "Class 101",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "teachers-lounge",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "1f-west-hallway-s"
+            }
+        ],
+        "name": "Teacher's Lounge",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-west-hallway-s",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "w",
+                "destination": "teachers-lounge"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-west-hallway-n"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-south-hallway-w"
+            }
+        ],
+        "name": "1F West Hallway S",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-east-hallway-s",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-east-hallway-n"
+            },
+            {
+                "direction": "e",
+                "destination": "class-102"
+            },
+            {
+                "direction": "s",
+                "destination": "1f-south-hallway-e"
+            }
+        ],
+        "name": "1F East Hallway S",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-102",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-east-hallway-s"
+            }
+        ],
+        "name": "Class 102",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-south-hallway-w",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "2f-south-hallway-e2"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-west-hallway-s"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-south-hallway"
+            },
+            {
+                "direction": "s",
+                "destination": "class-103"
+            }
+        ],
+        "name": "1F South Hallway W",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-south-hallway",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "auditorium"
+            },
+            {
+                "direction": "w",
+                "destination": "1f-south-hallway-w"
+            },
+            {
+                "direction": "e",
+                "destination": "1f-south-hallway-e"
+            },
+            {
+                "direction": "s",
+                "destination": "main-entrance/exit"
+            }
+        ],
+        "name": "1F South Hallway",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "1f-south-hallway-e",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "1f-south-hallway"
+            },
+            {
+                "direction": "n",
+                "destination": "1f-east-hallway-s"
+            },
+            {
+                "direction": "e",
+                "destination": "2f-south-hallway-w2"
+            },
+            {
+                "direction": "s",
+                "destination": "office"
+            }
+        ],
+        "name": "1F South Hallway E",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "class-103",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "1f-south-hallway-w"
+            }
+        ],
+        "name": "Class 103",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "main-entrance/exit",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "1f-south-hallway"
+            }
+        ],
+        "name": "Main Entrance/Exit",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "office",
+        "edges": [
+            {
+                "direction": "n",
+                "destination": "1f-south-hallway-e"
+            }
+        ],
+        "name": "Office",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "school-yard",
+        "edges": [
+            {
+                "direction": "w",
+                "destination": "gymnasium"
+            }
+        ],
+        "name": "School Yard",
+        "items": [],
+        "safeZone": true,
+        "detailed_description": ""
+    },
+    {
+        "id": "secret-basement",
+        "edges": [
+            {
+                "direction": "e",
+                "destination": "infirmary"
+            }
+        ],
+        "name": "Secret Basement",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    },
+    {
+        "id": "the-void",
+        "edges": [],
+        "name": "Void",
+        "items": [],
+        "safeZone": false,
+        "detailed_description": ""
+    }
+]

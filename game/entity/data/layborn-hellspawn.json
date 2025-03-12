@@ -1,0 +1,31 @@
+[
+    {
+        "id": "layborn-hellspawn",
+        "name": "Layborn Hellspawn",
+        "active": false,
+        "vertexId": "the-void",
+        "stats": {
+            "Atk": 20,
+            "Current HP": 500,
+            "Max HP": 500,
+            "Current Mana": 0,
+            "Max Mana": 0,
+            "Def": 5
+        },
+        "isEnemy": true,
+        "interactionPriority": 3,
+        "moveSpeed": 0,
+        "reactions": [
+            {
+                "postconditions": {
+                    "0": {
+                        "operation": "append",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "defeated-antagonist"
+                    }
+                }
+            }
+        ]
+    }
+]

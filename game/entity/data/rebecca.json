@@ -1,0 +1,369 @@
+[
+    {
+        "id": "nurse",
+        "name": "Rebecca",
+        "active": false,
+        "inventory": [],
+        "vertexId": "infirmary",
+        "stats": {
+            "Atk": 3,
+            "Def": 0,
+            "Current HP": 50,
+            "Max HP": 50,
+            "Current Mana": 0,
+            "Max Mana": 0
+        },
+        "interactionPriority": 2,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "learned-of-janitor"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "secured-class-102"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "Rebecca: Hey {}, you're just in time, the janitor is waking up now. Janitor, how are you feeling?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Janitor: A- cough, cough, cough",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Rebecca: Careful there, water's on your right.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Janitor: Drinks water",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Janitor: Well, I'm alive, so that's good at least. Thanks, nurse, I'd be dead if it weren't for you.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Rebecca: Call me Rebecca, I'd say in this situation we're all better off being familiar with each other.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Janitor: In that case then call me Tobias. Hey {}, you look like you know how to handle yourself in this situation. I can help you handle yourself even better if you'd like? I survived a run-in with what appeared to be the boss zombie after all. Well, with Rebecca's help, but you get the idea.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ]
+                        },
+                        {
+                            "message": " * Thank Tobias for the offer"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "thank"
+                    ],
+                    "userTargets": [
+                        "Tobias"
+                    ],
+                    "postconditions": {
+                        "thank tobias": {
+                            "prints": [
+                                {
+                                    "message": "{}: That would be appreciated.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Tobias: Great, let's go set up a place where I can help you learn to protect yourself against these zombies. I think room 102 would do quite nicely.",
+                            "pressEnterToContinue": true
+                        }
+                    ],
+                    "postconditions": {
+                        "0": {
+                            "operation": "set",
+                            "target": "caller",
+                            "targetState": "vertexId",
+                            "value": "class-102"
+                        },
+                        "1": {
+                            "operation": "set",
+                            "target": "id=tobias",
+                            "targetState": "vertexId",
+                            "value": "class-102"
+                        },
+                        "2": {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "secured-class-102"
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-nurse"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "An unnamed person suddenly swings a wooden board at you. You block it with your {}.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "armedWeapon"
+                                }
+                            ]
+                        },
+                        {
+                            "message": " * Ease the situation"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "ease"
+                    ],
+                    "userTargets": [
+                        "situation"
+                    ],
+                    "postconditions": {
+                        "ease situation": {
+                            "prints": [
+                                {
+                                    "message": "{}: Whoa whoa! Friendly!",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Unnamed person: Oh? You're not a zombie? Come on in then, have a seat.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Unnamed person: I'm Rebecca, the school nurse. Oh my, it looks like you're injured. Let me help you with that. What's your name, by the way?"
+                        },
+												{
+														"message": " * Introduce yourself"
+												}
+                    ]
+                },
+                {
+                    "userActions": [
+                        "introduce"
+                    ],
+                    "userTargets": [
+                        "self"
+                    ],
+                    "postconditions": {
+                        "introduce self": {
+                            "prints": [
+                                {
+                                    "message": "{}: {}.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        },
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Rebecca: Feeling better now {}? I can help you out whenever you're injured, just come by here because I'm too scared to go out there where the zombies are. In fact, I insist on helping you out when you're injured, we don't know how many people are still alive.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ]
+                        },
+                        {
+                            "message": " * Thank Rebecca"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "thank"
+                    ],
+                    "userTargets": [
+                        "Rebecca"
+                    ],
+                    "postconditions": {
+                        "thank rebecca": {
+                            "prints": [
+                                {
+                                    "message": "{}: Thank you Rebecca, I will probably end up coming in here again.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Rebecca: No problem, always happy to help."
+                        }
+                    ],
+                    "postconditions": {
+                        "0": {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-nurse"
+                        }
+                    }
+                }
+            ],
+            {
+                "preconditions": [
+                    {
+                        "operation": "in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "met-nurse"
+                    },
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "learned-of-janitor"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": " * Ask Nurse Rebecca who the guy on the bed is"
+                    },
+                    {
+                        "message": " * Go outside"
+                    }
+                ],
+                "userActions": [
+                    "ask",
+                    "go"
+                ],
+                "userTargets": [
+                    "Rebecca",
+                    "outside"
+                ],
+                "postconditions": {
+                    "ask rebecca": {
+                        "prints": [
+                            {
+                                "message": "{}: Hey, who's that on the bed?",
+                                "messageArgs": [
+                                    {
+                                        "target": "caller",
+                                        "targetState": "firstName"
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Rebecca: Oh, that's the janitor. I found him rather banged up in the hallway so I brought him back here to fix him up. He should be waking up soon."
+                            }
+                        ],
+                        "operation": "append",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "learned-of-janitor"
+                    },
+                    "go outside": {
+                        "operation": "set",
+                        "target": "caller",
+                        "targetState": "vertexId",
+                        "value": "1f-west-hallway-n"
+                    }
+                }
+            },
+            {
+                "preconditions": [
+                    {
+                        "operation": "in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "trained-by-tobias"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "{}: I think I got hit here.",
+                        "messageArgs": [
+                            {
+                                "target": "caller",
+                                "targetState": "firstName"
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Rebecca patches up your injuries."
+                    }
+                ],
+                "postconditions": {
+                    "0": {
+                        "operation": "set",
+                        "target": "caller",
+                        "targetStats": "Current HP",
+                        "value": "Max HP"
+                    }
+                }
+            }
+        ]
+    }
+]

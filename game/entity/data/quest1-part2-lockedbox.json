@@ -1,0 +1,86 @@
+[
+    {
+        "id": "lockedbox",
+        "name": "Lockedbox",
+        "active": false,
+        "inventory": [],
+        "vertexId": "teachers-lounge",
+        "interactionPriority": 3,
+        "reactions": [
+            {
+                "preconditions": [
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "acquired-lockpick"
+                    },
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "unlocked-box"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "You found a locked box. If only you had its key or a lockpick..."
+                    }
+                ]
+            },
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired-lockpick"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "unlocked-box"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a locked box. Use your lockpick to open the locked box?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "use",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "lockpick",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "use lockpick": {
+                            "prints": [
+                                {
+                                    "message": "You used your lockpick and unlocked the box."
+                                }
+                            ],
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "unlocked-box"
+                        },
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not use your lockpick to try to unlock the box."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "id": "gloves-2",
+        "name": "magically reinforced golden gloves",
+        "active": true,
+        "vertexId": "music-room",
+        "isItem": true,
+        "type": "Gloves",
+        "usage": "Equipment",
+        "targetStat": "Def",
+        "buffStrength": 10,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired gloves-2"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a pair of magically reinforced golden gloves. Equip the gloves?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "gloves",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip gloves": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired gloves-2"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wearing the gloves."
+                                    },
+                                    {
+                                        "message": "These gloves gives you +10 Def."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=gloves-2"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the gloves."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

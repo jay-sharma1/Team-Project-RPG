@@ -1,0 +1,150 @@
+[
+    {
+        "id": "tobias",
+        "name": "Tobias",
+        "active": false,
+        "inventory": [],
+        "vertexId": "infirmary",
+        "stats": {
+            "Atk": 3,
+            "Def": 0,
+            "Current HP": 50,
+            "Max HP": 50,
+            "Current Mana": 0,
+            "Max Mana": 0
+        },
+        "interactionPriority": 2,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "trained-by-tobias"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "tobias-confrontation"
+                        }
+                    ],
+                    "prints": [
+                        {
+														"message": "Tobias: Hey {}, be careful around Layborn. Watch him for anything suspicious.",
+														"messageArgs": [
+																{
+																		"target": "caller",
+																		"targetState": "firstName"
+																}
+														]
+                        },
+												{
+														"message": " * Hesitate to sus Layborn"
+												}
+                    ]
+								},
+								{
+										"userActions": [
+												"hesitate"
+										],
+										"userTargets": [
+												null
+										],
+										"postconditions": {
+												"hesitate": {
+														"prints": [
+														    {
+																		"message": "{}: What? Why?",
+																		"messageArgs": [
+																				{
+																						"target": "caller",
+																						"targetState": "firstName"
+																				}
+																		]
+																}
+														]
+												}
+										}
+								},
+								{
+										"prints": [
+												{
+														"message": "Tobias: Just trust me on this, alright? Keep an eye on him, be ready in case he tries anything."
+												},
+												{
+														"message": " * Agree to sus Layborn"
+												}
+										]
+								},
+								{
+										"userActions": [
+												"agree"
+										],
+										"userTargets": [
+												null
+										],
+										"postconditions": {
+                        "agree": {
+														"prints": [
+																{
+																		"message": "{}: Alright, if you say so...",
+																		"messageArgs": [
+																				{
+																						"target": "caller",
+																						"targetState": "firstName"
+																				}
+																		]
+																}
+														],
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "tobias-confrontation"
+                        }
+                    }
+								}
+            ],
+            {
+                "preconditions": [
+                    {
+                        "operation": "in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "secured-class-102"
+                    },
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "trained-by-tobias"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "You go to your homeroom where Tobias sets up some barricades to make the room safer. Class 102 is now designated as a safe room, no zombies can be in this room now.",
+                        "pressEnterToContinue": true
+                    },
+                    {
+                        "message": "Tobias: The first thing you should know is how to stay in the fighting mood. As you know, our emotions influence our actions, so staying focused on fighting is important to fight effectively...",
+                        "pressEnterToContinue": true
+                    },
+                    {
+                        "message": "Tobias gives you a lesson on how to consciously detect your emotions, and maximize or minimize their effect on your fighting.",
+                        "pressEnterToContinue": true
+                    }
+                ],
+                "postconditions": {
+                    "0": {
+                        "operation": "append",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "trained-by-tobias"
+                    }
+                }
+            }
+        ]
+    }
+]

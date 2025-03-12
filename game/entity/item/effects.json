@@ -1,0 +1,10 @@
+[
+	{
+		"id": "strength",
+		"name": "Strength",
+		"description": "You are stronger",
+		"stat modifiers": {
+			"Atk": 1.2
+		}
+	}
+]

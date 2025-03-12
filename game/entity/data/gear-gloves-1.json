@@ -1,0 +1,74 @@
+[
+    {
+        "id": "gloves-1",
+        "name": "Gloves",
+        "active": true,
+        "vertexId": "class-201",
+        "isItem": true,
+        "type": "Gloves",
+        "usage": "Equipment",
+        "targetStat": "Def",
+        "buffStrength": 5,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired gloves-1"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a pair of gloves. Equip the gloves?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "gloves",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip gloves": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired gloves-1"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wearing the gloves."
+                                    },
+                                    {
+                                        "message": "These gloves gives you +5 Def."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=gloves-1"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the gloves."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

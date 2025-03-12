@@ -1,0 +1,74 @@
+[
+    {
+        "id": "sword-2",
+        "name": "stylish technic sword",
+        "active": true,
+        "vertexId": "class-202",
+        "isItem": true,
+        "type": "Weapon",
+        "usage": "Equipment",
+        "targetStat": "Atk",
+        "buffStrength": 750,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired sword-2"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a stylish technic sword. Equip the sword?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "sword",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip sword": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired sword-2"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wielding the sword."
+                                    },
+                                    {
+                                        "message": "This sword gives you +750 Atk."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=sword-2"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the sword."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

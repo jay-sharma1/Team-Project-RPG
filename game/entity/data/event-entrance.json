@@ -1,0 +1,7 @@
+[
+    {
+        "vertexId": "main-entrance/exit",
+        "interactionPriority": 1,
+        "greeting": "The school's main entrance is blocked!"
+    }
+]

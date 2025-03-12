@@ -1,0 +1,19 @@
+[
+	{
+		"id": "zombie-2",
+		"name": "Zombie",
+		"active": false,
+		"vertexId": "1f-south-hallway-w",
+		"stats": {
+			"Atk": 20,
+			"Current HP": 200,
+			"Max HP": 200,
+			"Current Mana": 0,
+			"Max Mana": 0,
+			"Def": 5
+		},
+		"isEnemy": true,
+		"interactionPriority": 1,
+		"moveSpeed": 0
+	}
+]

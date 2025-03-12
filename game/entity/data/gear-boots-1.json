@@ -1,0 +1,74 @@
+[
+    {
+        "id": "boots-1",
+        "name": "Boots",
+        "active": true,
+        "vertexId": "school-shop",
+        "isItem": true,
+        "type": "Boots",
+        "usage": "Equipment",
+        "targetStat": "Def",
+        "buffStrength": 5,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired boots-1"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a pair of boots. Equip the boots?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "boots",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip boots": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired boots-1"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wearing the boots."
+                                    },
+                                    {
+                                        "message": "These boots gives you +5 Def."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=boots-1"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the boots."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

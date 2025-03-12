@@ -1,0 +1,74 @@
+[
+    {
+        "id": "helmet-2",
+        "name": "reinforced steel helmet",
+        "active": true,
+        "vertexId": "class-204",
+        "isItem": true,
+        "type": "Helmet",
+        "usage": "Equipment",
+        "targetStat": "Def",
+        "buffStrength": 20,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired helmet-2"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a reinforced steel helmet. Equip the helmet?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "helmet",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip helmet": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired helmet-2"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wearing the helmet."
+                                    },
+                                    {
+                                        "message": "This helmet gives you +20 Def."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=helmet-2"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the helmet."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

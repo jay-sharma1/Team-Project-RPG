@@ -1,0 +1,221 @@
+[
+    {
+        "id": "matthew",
+        "name": "Matthew",
+        "active": false,
+        "inventory": [],
+        "vertexId": "class-101",
+        "stats": {
+            "Atk": 3,
+            "Def": 0,
+            "Current HP": 50,
+            "Max HP": 50,
+            "Current Mana": 0,
+            "Max Mana": 0
+        },
+        "interactionPriority": 2,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-matthew-1"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "As you walk in, you hear someone saying 'kagemane no jutsu' and your whole body suddenly freezes up and goes completely still as 3 people sitting at a table stare at you."
+                        },
+                        {
+                            "message": " * Ask them why you can't move"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "ask"
+                    ],
+                    "userTargets": [
+                        "them"
+                    ],
+                    "postconditions": {
+                        "ask them": {
+                            "prints": [
+                                {
+                                    "message": "{}: Uh... what? Why can't I move?",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "message": "At least your mouth can still move and your vital functions haven't been stopped, that's good at least.",
+                                    "pressEnterToContinue": true
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "An unnamed person: Ok, he's definitely not a zombie, I'll release the jutsu now.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "The two people beside him nod as you feel yourself back in control of your body."
+                        },
+                        {
+                            "message": " * Thank him"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "thank"
+                    ],
+										"userTargets": [
+                        "him"
+                    ],
+                    "postconditions": {
+                        "thank him": {
+                            "prints": [
+                                {
+                                    "message": "{}: Thank you. You mind telling me what that was all about? How did you freeze my whole body without touching me?",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "The unnamed person: I just used this thing.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "He points at the highly decorated stick that he's holding."
+                        },
+                        {
+                            "message": " * Ask them to join forces."
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "ask"
+                    ],
+                    "userTargets": [
+                        "them"
+                    ],
+                    "postconditions": {
+                        "ask them": {
+                            "prints": [
+                                {
+                                    "message": "{}: Haha, very funny. Alright, if you don't wanna tell me then I guess that's ok. Regardless, since we're all survivors here, wanna come with me and figure out how to get out of here?",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-matthew-1"
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-matthew-1"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "defeated-antagonist"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-matthew-2"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "The unnamed person: Actually, we'd rather not go out there where there are so many zombies waiting to kill us. We'll wait for some adults to come make sure the place is safer.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Alright, well, I'll go make everything safer then. I'll come get you when there aren't so many zombies waiting to kill us.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ]
+                        },
+                        {
+                            "message": "The unnamed person: Wait! If you're gonna go out there then take this with you.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Ok... sure?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ]
+                        },
+                        {
+                            "message": "He gives you a helmet which you accept out of not wanting to argue with him.",
+                            "pressEnterToContinue": true
+                        }
+                    ],
+                    "postconditions": {
+                        "0": {
+                            "operation": "equip",
+                            "target": "caller",
+                            "targetState": "inventory",
+                            "value": "id=helmet-1"
+                        },
+                        "1": {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-matthew-2"
+                        },
+                        "2": {
+                            "operation": "set",
+                            "target": "caller",
+                            "targetState": "vertexId",
+                            "value": "1f-east-hallway-n"
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

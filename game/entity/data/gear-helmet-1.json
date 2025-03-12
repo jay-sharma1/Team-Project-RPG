@@ -1,0 +1,14 @@
+[
+    {
+        "id": "helmet-1",
+        "name": "Helmet",
+        "active": true,
+        "vertexId": "class-101",
+        "isItem": true,
+        "type": "Helmet",
+        "usage": "Equipment",
+        "targetStat": "Def",
+        "buffStrength": 10,
+        "interactionPriority": -1
+    }
+]

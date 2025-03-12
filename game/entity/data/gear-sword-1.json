@@ -1,0 +1,74 @@
+[
+    {
+        "id": "sword-1",
+        "name": "sleek refined sword",
+        "active": true,
+        "vertexId": "1f-east-hallway-s",
+        "isItem": true,
+        "type": "Weapon",
+        "usage": "Equipment",
+        "targetStat": "Atk",
+        "buffStrength": 75,
+        "interactionPriority": 10,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired sword-1"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a sleek refined sword. Equip the sword?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "equip",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "sword",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "equip sword": [
+                            {
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "acquired sword-1"
+                            },
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You are now wielding the sword."
+                                    },
+                                    {
+                                        "message": "This sword gives you +75 Atk."
+                                    }
+                                ],
+                                "operation": "equip",
+                                "target": "caller",
+                                "targetState": "inventory",
+                                "value": "id=sword-1"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not equip the sword."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

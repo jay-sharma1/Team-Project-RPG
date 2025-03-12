@@ -1,0 +1,103 @@
+[
+    {
+        "vertexId": "school-yard",
+        "interactionPriority": 1,
+        "reactions": [
+            {
+                "preconditions": [
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "defeated-antagonist"
+                    },
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "met-layborn"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "Congratulations, you have Escaped from Hellspawn but an hear ominous laughter..."
+                    }
+                ],
+                "postconditions": {
+                    "0": {
+                        "operation": "update",
+                        "target": "caller",
+                        "targetState": "hasEscapedFromHellspawn",
+                        "value": true
+                    }
+                }
+            },
+            {
+                "preconditions": [
+                    {
+                        "operation": "not in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "defeated-antagonist"
+                    },
+                    {
+                        "operation": "in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "met-layborn"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "Congratulations, you have Escaped from Hellspawn but hear an ominous laughter from a familiar voice..."
+                    }
+                ],
+                "postconditions": {
+                    "0": {
+                        "operation": "update",
+                        "target": "caller",
+                        "targetState": "hasEscapedFromHellspawn",
+                        "value": true
+                    }
+                }
+            },
+            {
+                "preconditions": [
+                    {
+                        "operation": "in",
+                        "target": "caller",
+                        "targetState": "adventureLog",
+                        "value": "defeated-antagonist"
+                    }
+                ],
+                "prints": [
+                    {
+                        "message": "Congratulations you have Escaped from Hellspawn!",
+                        "style": "success"
+                    },
+                    {
+                        "message": "..."
+                    },
+                    {
+                        "message": "Meanwhile back at Layborn's office..."
+                    },
+                    {
+                        "message": "Asmodeus: Layborn... you fool! Who has slain you? I will hunt down who did this..."
+                    },
+                    {
+                        "message": "Escape From Hellspawn 2!",
+                        "style": "important"
+                    }
+                ],
+                "postconditions": {
+                    "0": {
+                        "operation": "update",
+                        "target": "caller",
+                        "targetState": "hasEscapedFromHellspawn",
+                        "value": true
+                    }
+                }
+            }
+        ]
+    }
+]

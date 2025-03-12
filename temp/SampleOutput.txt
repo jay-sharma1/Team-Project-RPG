@@ -1,0 +1,77 @@
+/406/CCPS406_P22_01-Team-Project/game/main.py 
+John Doe's turn.
+
+Current location: Class 102
+
+Move choices: ['w']
+
+w
+John Doe's turn.
+
+Current location: 1F East Hallway S
+
+Move choices: ['n', 'e', 's']
+
+s
+John Doe's turn.
+
+Current location: 1F South Hallway E
+
+Move choices: ['w', 'n', 'e', 's']
+
+w
+John Doe's turn.
+
+Current location: 1F South Hallway
+
+Move choices: ['w', 'e', 's']
+
+w
+John Doe's turn.
+
+Current location: 1F South Hallway W
+
+Move choices: ['w', 'n', 'e', 's']
+
+s
+You found a lockpick. Take the lockpick?
+
+take lockpick
+You take the lockpick and put it in your pocket.
+
+John Doe's turn.
+
+Current location: Class 103
+
+Move choices: ['n']
+
+n
+John Doe's turn.
+
+Current location: 1F South Hallway W
+
+Move choices: ['w', 'n', 'e', 's']
+
+n
+John Doe's turn.
+
+Current location: 1F West Hallway S
+
+Move choices: ['w', 'n', 's']
+
+w
+You found a locked box. Use your lockpick to open the locked box?
+
+use lockpick
+You used your lockpick and unlocked the box.
+
+You find a notebook in the box. Read the notebook?
+
+read notebook
+You read the notebook.
+
+John Doe's turn.
+
+Current location: Teacher's Lounge
+
+Move choices: ['e']

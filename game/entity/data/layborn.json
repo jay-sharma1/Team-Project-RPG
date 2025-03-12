@@ -1,0 +1,507 @@
+[
+    {
+        "id": "layborn",
+        "name": "Vice-Principal (Mr. Layborn)",
+        "active": false,
+        "inventory": [],
+        "vertexId": "office",
+        "stats": {
+            "Atk": 20,
+            "Def": 5,
+            "Current HP": 200,
+            "Max HP": 200,
+            "Current Mana": 100,
+            "Max Mana": 100
+        },
+        "interactionPriority": 2,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "read-notebook"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "defeated-antagonist"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You pull out the notebook."
+                        },
+                        {
+                            "message": " * Request that he explains himself"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "request"
+                    ],
+                    "userTargets": [
+                        "explanation"
+                    ],
+                    "postconditions": {
+                        "request explanation": {
+                            "prints": [
+                                {
+                                    "message": "{}: Layborn, explain yourself.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: Oh, so you have found out that I am the one who started all this. Well, there is a method to the madness. I am trying to summon a certain demon, one that will bring peace and order to the world. Look at the world. Horrible things happening everywhere. People starting wars over things that are perfectly negotiable and dragging others into their wars as well. The masses refusing to protect themselves from a virus that, while it may not directly kill them, will make them extremely vulnerable to dying. And that is just the most prominent stuff! What this demon will do is end all of it, end all the misery, the human rights abuses, and the pain. This world will be a very happy place once this demon is here."
+                        },
+                        {
+                            "message": " * Criticize his plan"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "criticize"
+                    ],
+                    "userTargets": [
+                        "plan"
+                    ],
+                    "postconditions": {
+                        "criticize plan": {
+                            "prints": [
+                                {
+                                    "message": "{}: But what about the hundreds of people who you just killed by turning people into zombies? Shouldn't they have the right to live in such a utopia as well? They were people, just like you and me. And most of these people were children! They are the future of humanity! And you just killed them without remorse?!",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: Oh trust me, I have plenty of remorse about that. It was an incredibly difficult decision to make, sending them to their deaths. But as I said, it will all be worth it. You will see once the demon is here and starts changing the world. Sacrifice the few to save the many. Those people, those kids, will be remembered as the ones who gave their lives to usher in the new, perfect world."
+                        },
+                        {
+                            "message": " * Criticize his lack of failed alternative possible plans"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "criticize"
+                    ],
+                    "userTargets": [
+                        "plan"
+                    ],
+                    "postconditions": {
+                        "criticize plan": {
+                            "prints": [
+                                {
+                                    "message": "{}: But couldn't you at least figure out how to do it without the initial death and suffering? Even without questioning the sanity of summoning a demon, you still could have come up with something better.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: There were 14,000,604 other possible ways I could have attempted it, yes, but all of them would have failed one way or another. There was no other way to do this successfully. No way to avoid doing it like this, no way to at least adjust the magic so that it would be random, dispassionate, fair to rich and poor alike. And as for sanity, well, not all demons are actively bad. Some are quite mercenary. You request something to be done for you, they name a price for it. If someone else requests them to not do what you requested, either implicitly or explicitly, the price goes up until one party cannot afford the price anymore. And there is a demon with special powers and constraints to be the middleman for every transaction to make sure all of them are fair."
+                        },
+                        {
+                            "message": " * Criticize his lack of caution in dealing with demons"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "criticize"
+                    ],
+                    "userTargets": [
+                        "plan"
+                    ],
+                    "postconditions": {
+                        "criticize plan": {
+                            "prints": [
+                                {
+                                    "message": "{}: Even so, you can't be sure that the demon isn't just a bigger evil. You don't know how the demon will bring such peace. The demon might just force us to think we're happy, but we're not. Such an illusion is not real peace! It's just a fake!",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: I believe that I made my request specific enough to avoid all that. The demon is bound by the terms of the deal, just as I am bound by the terms of the deal. As such, I am confident that this will work out."
+                        },
+                        {
+                            "message": " * Stop him from continuing his plan"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "fight"
+                    ],
+                    "userTargets": [
+                        "layborn"
+                    ],
+                    "postconditions": {
+                        "fight layborn": {
+                            "prints": [
+                                {
+                                    "message": "{}: I'm sorry, but I cannot trust your judgement. You didn't hire lawyers to help you formulate your request, which means he's going to find a way to screw us all over, one way or another.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "read-notebook"
+                        },
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-layborn"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "Layborn: Hello {}, nice to see you are still alive.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ]
+                        },
+                        {
+                            "message": " * Greet Layborn"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "greet"
+                    ],
+                    "userTargets": [
+                        "layborn"
+                    ],
+                    "postconditions": {
+                        "greet layborn": {
+                            "prints": [
+                                {
+                                    "message": "{}: Hi Layborn, just passing by.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "operation": "set",
+                            "target": "caller",
+                            "targetState": "vertexId",
+                            "value": "1f-south-hallway-e"
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "read-notebook"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-layborn"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You step towards a purple barrier.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Unnamed person: Whoa hold on there, stay still for a second.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "The unnamed person holds his index and middle finger up.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "The purple barrier disintegrates into nothing before your eyes.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Unnamed person: Ok, now you can come in.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "As you walk past where the barrier was, he continues to hold his index and middle finger up.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "The purple barrier reappears.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Unnamed person: Now zombies will not interrupt us. Have a seat.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Unnamed person: I am the vice principal of this school, you may call me Layborn. What is your name?"
+                        }
+                    ]
+                },
+                {
+                    "prints": [
+                        {
+                            "message": " * Introduce yourself."
+                        }
+                    ],
+                    "userActions": [
+                        "introduce"
+                    ],
+                    "userTargets": [
+                        "self"
+                    ],
+                    "postconditions": {
+                        "introduce self": {
+                            "prints": [
+                                {
+                                    "message": "{}: {}.",
+                                    "messageArgs": [
+                                        {
+                                            "target": "caller",
+                                            "targetState": "name"
+                                        },
+                                        {
+                                            "target": "caller",
+                                            "targetState": "firstName"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: Well {}, it is good to see that we have another survivor in this mess.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: Huh. That is unusual.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: *mutters* Byakugan.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn's eyes suddenly turn white and bulging veins appear to the sides of his eyes. He stares at you for a few seconds. His eyes move slowly from your hands, up your arms, to your chest, and down to your abdomen. He then quickly glances at the rest of your body.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: Tell me, {}, have you recently felt something stirring inside you, something that made you feel like you could do anything? And no, I am not talking about emotions like confidence or arrogance. I am talking about a feeling of something tangible.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Uh... yes?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "prints": [
+                        {
+                            "message": "Layborn: That confirms it. {}, you, like me, are able to cast magic.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "firstName"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "You're tempted to laugh at him and go on your way, but you remember the purple barrier thing. Also, you saw clear as day how his eyes went all weird. You decide to go along with it for now.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Ok... would you be able to teach me how to cast magic then?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: Unfortunately, no.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Why can't you teach me how to cast?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: There is a spell locking the casting knowledge away from being revealed. And before you ask, I cannot reveal anything about this spell other than that it is there.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Alright, I guess that's it. Ok, let's go.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: Whoa slow down there. I cannot leave this room. The purple barrier will kill me if I try to leave. And I cannot turn it off.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: But I clearly saw you do whatever it is you did with your fingers and it went away.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: That was not me. But that is all I can say about it. The fact of the matter is, I cannot leave this room.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Alright then. I guess I'll just go alone. Can we at least say goodbye for now from the door?",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ],
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn walks with you to the barrier and holds his fingers up again. As soon as the barrier comes down, you quickly grab his arm and yank him out the door. You make it out, but suddenly there's a cloud of smoke and you don't feel his arm anymore. You wave away the smoke to find that the barrier is back up and Layborn is behind it.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "Layborn: I must say, I did not expect you to do that. That was a good attempt to get me out, although foolish. You will be able to enter this room in the future, but any future attempts to get me out will result in getting killed by the barrier.",
+                            "pressEnterToContinue": true
+                        },
+                        {
+                            "message": "{}: Well that was a bust. In that case see you around then. For real this time.",
+                            "messageArgs": [
+                                {
+                                    "target": "caller",
+                                    "targetState": "name"
+                                }
+                            ]
+                        }
+                    ],
+                    "postconditions": {
+                        "0": {
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "met-layborn"
+                        },
+                        "1": {
+                            "operation": "set",
+                            "target": "caller",
+                            "targetState": "vertexId",
+                            "value": "1f-south-hallway-e"
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

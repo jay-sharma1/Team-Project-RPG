@@ -1,0 +1,59 @@
+[
+    {
+        "id": "lockpick",
+        "name": "Lockpick",
+        "active": false,
+        "inventory": [],
+        "vertexId": "class-103",
+        "interactionPriority": 3,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired-lockpick"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You found a lockpick. Take the lockpick?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "take",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "lockpick",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "take lockpick": {
+                            "prints": [
+                                {
+                                    "message": "You take the lockpick and put it in your pocket."
+                                }
+                            ],
+                            "operation": "append",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "acquired-lockpick"
+                        },
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not take the lockpick."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]

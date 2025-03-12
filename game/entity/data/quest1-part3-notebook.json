@@ -1,0 +1,119 @@
+[
+    {
+        "id": "notebook",
+        "name": "Notebook",
+        "active": false,
+        "inventory": [],
+        "vertexId": "teachers-lounge",
+        "interactionPriority": 4,
+        "reactions": [
+            [
+                {
+                    "preconditions": [
+                        {
+                            "operation": "in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "unlocked-box"
+                        },
+                        {
+                            "operation": "not in",
+                            "target": "caller",
+                            "targetState": "adventureLog",
+                            "value": "read-notebook"
+                        }
+                    ],
+                    "prints": [
+                        {
+                            "message": "You find a notebook in the box. Read the notebook?"
+                        }
+                    ]
+                },
+                {
+                    "userActions": [
+                        "read",
+                        "leave"
+                    ],
+                    "userTargets": [
+                        "notebook",
+                        "alone"
+                    ],
+                    "postconditions": {
+                        "read notebook": [
+                            {
+                                "prints": [
+                                    {
+                                        "message": "You read the notebook."
+                                    },
+																		{
+																				"message": "Notebook title: Magic Rituals, Book 1, Chapter 1: Zombie Contagion"
+																		},
+																		{
+																				"message": "My name is Layborn. This notebook is a document of my journey into practicing the magical arts."
+																		},
+																		{
+																				"message": "\"Magic\" is defined as a set of actions, involving \"magical energy\". Magical energy is self defined."
+																		},
+																		{
+																				"message": "A \"magic ritual\" is defined as magic, involving a location prepared with runes."
+																		},
+																		{
+																				"message": "The zombie contagion ritual uses, as a base, the Eight Trigrams rune set with no gap between the two constituents. The compatible modifications rune set is the Scroll of Seals set. The chant should be done in the Curse Unsealing style."
+																		},
+																		{
+																				"message": "The recommended modification rune for maximum impact is the Shadow rune. The additional dispersion, along with conservation of power, offered by this rune allows for a huge panic factor with little additional cost."
+																		},
+																		{
+																				"message": "I will customize the zombie contagion ritual to be compatible with the Six Paths modifications rune set with the aim of using it with the Deva rune. The main constituents of this rune, the Almighty Push and Universal Pull runes, will allow me greater control over the dispersion area."
+																		},
+																		{
+																				"message": "Test 1: The ritual will first be done with the target area being several mice trapped in a 2 x 2 x 2 foot cage."
+																		},
+																		{
+																				"message": "Expected results: target area being confined to the exact area of the cage, all mice zombified."
+																		},
+																		{
+																				"message": "Actual results: area affected by ritual fluctuated from half to twice the expected area. Shape could not be kept consistent. Only 25% of mice were zombified."
+																		},
+																		{
+																				"message": "Test 500: Test 1 success. All expectations of expected results fulfilled. I will now pay a hunter to track down a herd of wildlife."
+																		},
+																		{
+																				"message": "Test 501: The ritual will be done with the target area being a grassy area the size of a city block, with 10 deer occupying it."
+																		},
+																		{
+																				"message": "Expected results: target area being confined to the exact area of the grassy area, all deer zombified, no other fauna zombified."
+																		},
+																		{
+																				"message": "Actual results: 100% success."
+																		},
+																		{
+																				"message": "I will now perform the ritual on the real environment: my school.",
+																				"pressEnterToContinue": true
+																		}
+                                ],
+                                "operation": "append",
+                                "target": "caller",
+                                "targetState": "adventureLog",
+                                "value": "read-notebook"
+                            },
+                            {
+                                "operation": "set",
+                                "target": "id=layborn-hellspawn",
+                                "targetState": "vertexId",
+                                "value": "office"
+                            }
+                        ],
+                        "leave alone": {
+                            "prints": [
+                                {
+                                    "message": "You did not take the notebook."
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        ]
+    }
+]
