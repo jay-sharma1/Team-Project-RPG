@@ -1,7 +1,4 @@
 # Team Documents
+A group project I worked on through university.
 
-Copy of CCPS 406 Introduction to Software Engineering:
-https://docs.google.com/document/d/1k_o51F-cdkRfWmEfaz3Y5XCyhhy9qkMBXxGSWlZhC2M/edit
-
-Copy of CCPS 406 Programming Project
-https://docs.google.com/document/d/1h-0zS19E2-yQYGVSvSBIO_IZHvh429Uxg8hTtpKrHRI/edit
+General outline is that we used Python to create a turn-based, pure-text, RPG. 
